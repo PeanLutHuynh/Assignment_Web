@@ -47,23 +47,23 @@
     background-color: orange;
 }
 .item3{
-    height: 75px;
+    height: 150px;
     width: 100%;
     background-color: lightcoral;
 }
 .item4{
-    height: 75px;
+    height: 150px;
     width: 100%;
     background-color: lightgoldenrodyellow;
 }
 .bottom{
-    height: 150px;
+    height: 300px;
     width: 80%;
     float: left;
     background-color: purple;
 }
 .footer{
-    height: 300px;
+    height: 175px;
     background-color: pink;
     clear: both;
     width: 100%;
