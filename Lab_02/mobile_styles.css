@@ -1,0 +1,606 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Main Container - Full width responsive */
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    background-color: linear-gradient(to bottom, #4a8b5c, #2d5a3d);
+    position: relative;
+}
+
+/* Header */
+.header {
+    background-color: white;
+    padding: 12px 15px;
+    border-bottom: 3px solid #2d5a3d;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mpob-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.mpob-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a3d27;
+    line-height: 1.2;
+}
+
+.official-text {
+    font-size: 11px;
+    color: #444;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.board-text {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1a3d27;
+    line-height: 1.2;
+}
+
+.malaysia-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Navigation */
+.navigation {
+    background: linear-gradient(to bottom, #4a8b5c, #2d5a3d);
+    padding: 10px 15px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.nav-items {
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.nav-icon {
+    font-size: 18px;
+    margin-bottom: 3px;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+}
+
+/* Search Section */
+.search-section {
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-input {
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    height: 44px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+.search-input:focus {
+    border-color: #4a8b5c;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 139, 92, 0.2);
+}
+
+.search-btn {
+    background-color: #4a8b5c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 44px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #2d5a3d;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ffd700;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 20px 15px;
+    background-color: #f9f9f9;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.welcome-content {
+    width: 100%;
+}
+
+.welcome-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    max-height: 140px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.welcome-text h3 {
+    font-size: 18px;
+    color: #1a3d27;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.read-more-btn {
+    background-color: #4a8b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.read-more-btn:hover {
+    background-color: #2d5a3d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 20px 15px;
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.partner-logos {
+    width: 100%;
+}
+
+.partner-logo {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    filter: grayscale(20%);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: #ff7b00;
+    padding: 15px 15px;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: white; /* Change to white for visibility */
+    width: 100%;
+    font-weight: 500;
+}
+
+.desktop-link {
+    color: white; /* Change to white for visibility */
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.desktop-link:hover {
+    color: #fff3e6; /* Slightly off-white on hover */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.copyright {
+    font-size: 12px;
+    opacity: 0.9;
+    color: white; /* Change to white for visibility */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 575.98px) {
+    .header {
+        padding: 10px 12px;
+    }
+    
+    .mpob-text {
+        font-size: 14px;
+    }
+    
+    .official-text {
+        font-size: 10px;
+    }
+    
+    .board-text {
+        font-size: 11px;
+    }
+    
+    .mpob-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .malaysia-logo {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .nav-item {
+        font-size: 10px;
+        padding: 6px 2px;
+    }
+    
+    .nav-icon {
+        font-size: 16px;
+    }
+    
+    .hero-image {
+        height: 140px;
+    }
+    
+    .welcome-text h3 {
+        font-size: 16px;
+    }
+    
+    .welcome-text p {
+        font-size: 13px;
+    }
+    
+    .search-input, .search-btn {
+        height: 40px;
+        font-size: 13px;
+    }
+    
+    .partner-logo {
+        width: 60px;
+        height: 45px;
+    }
+    
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .hero-image {
+        height: 200px;
+    }
+    
+    .header {
+        padding: 14px 18px;
+    }
+    
+    .mpob-text {
+        font-size: 17px;
+    }
+    
+    .official-text {
+        font-size: 12px;
+    }
+    
+    .board-text {
+        font-size: 14px;
+    }
+    
+    .nav-item {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+    
+    .nav-icon {
+        font-size: 19px;
+    }
+    
+    .welcome-text h3 {
+        font-size: 20px;
+    }
+    
+    .welcome-text p {
+        font-size: 15px;
+    }
+    
+    .search-input, .search-btn {
+        height: 46px;
+        font-size: 15px;
+    }
+    
+    .partner-logo {
+        width: 80px;
+        height: 55px;
+    }
+    
+    .read-more-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .hero-image {
+        height: 240px;
+    }
+    
+    .header {
+        padding: 18px 24px;
+    }
+    
+    .navigation {
+        padding: 12px 24px;
+    }
+    
+    .search-section {
+        padding: 15px 24px;
+    }
+    
+    .welcome-section {
+        padding: 25px 24px;
+    }
+    
+    .partners-section {
+        padding: 25px 24px;
+    }
+    
+    .footer {
+        padding: 18px 24px;
+    }
+    
+    .mpob-text {
+        font-size: 19px;
+    }
+    
+    .official-text {
+        font-size: 13px;
+    }
+    
+    .board-text {
+        font-size: 16px;
+    }
+    
+    .nav-item {
+        font-size: 13px;
+        padding: 10px 6px;
+    }
+    
+    .nav-icon {
+        font-size: 20px;
+    }
+    
+    .welcome-text h3 {
+        font-size: 22px;
+    }
+    
+    .welcome-text p {
+        font-size: 16px;
+    }
+    
+    .search-input, .search-btn {
+        height: 48px;
+        font-size: 16px;
+    }
+    
+    .partner-logo {
+        width: 90px;
+        height: 60px;
+    }
+    
+    .read-more-btn {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .hero-image {
+        height: 250px;
+    }
+    
+    .header {
+        padding: 20px 30px;
+    }
+    
+    .navigation {
+        padding: 12px 30px;
+    }
+    
+    .search-section {
+        padding: 12px 30px;
+    }
+    
+    .welcome-section {
+        padding: 25px 30px;
+    }
+    
+    .partners-section {
+        padding: 25px 30px;
+    }
+    
+    .footer {
+        padding: 18px 30px;
+    }
+    
+    .mpob-text {
+        font-size: 16px;
+    }
+    
+    .official-text {
+        font-size: 11px;
+    }
+    
+    .board-text {
+        font-size: 14px;
+    }
+    
+    .nav-item {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+    
+    .nav-icon {
+        font-size: 18px;
+    }
+    
+    .welcome-text h3 {
+        font-size: 20px;
+    }
+    
+    .welcome-text p {
+        font-size: 14px;
+    }
+    
+    .search-input {
+        font-size: 14px;
+        padding: 8px 12px;
+        height: 40px;
+    }
+    
+    .search-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+        height: 40px;
+    }
+    
+    .read-more-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    .partner-logo {
+        width: 90px;
+        height: 55px;
+    }
+}
