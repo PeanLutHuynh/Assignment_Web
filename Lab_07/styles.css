@@ -1,0 +1,212 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Container */
+#container {
+    margin: 0px auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Banner */
+#banner {
+    text-align: center;
+    height: 150px;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Menu */
+#menu {
+    height: 50px;
+    background: linear-gradient(90deg, #004e92 0%, #000428 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu_item {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+.menu_item:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.menu_item.active {
+    background-color: white;
+    color: #004e92;
+    border-color: #004e92;
+}
+
+/* Left Menu */
+#lmenu {
+    height: 475px;
+    width: 20%;
+    background: linear-gradient(180deg, #43cea2 0%, #185a9d 100%);
+    float: left;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+#lmenu h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Content */
+#content {
+    height: 475px;
+    width: 80%;
+    background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 100%);
+    float: left;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+#content h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+#footer {
+    height: 80px;
+    background: linear-gradient(135deg, #667db6 0%, #2e4a7d 50%, #0f2027 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    clear: both;
+}
+
+/* Product Navigation Bar */
+.nav_bar {
+    padding: 8px 15px;
+    background: linear-gradient(90deg, #0061ff 0%, #60efff 100%);
+    color: white;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Product Items */
+.prd_item {
+    width: 160px;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #00c6ff 100%);
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.prd_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #00c6ff 0%, #667eea 100%);
+}
+
+.product_image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+}
+
+.product_name {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255,255,255,0.2);
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1020px) {
+    #container {
+        width: 100%;
+        margin: 0;
+    }
+    
+    #lmenu, #content {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    #lmenu, #content {
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+    
+    .menu_item {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    #banner h1 {
+        font-size: 20px;
+    }
+}
