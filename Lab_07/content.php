@@ -1,33 +1,48 @@
 <?php
 require_once "data.php";
-$cag = $_GET['gr'];
-if(!$cag || !array_key_exists($cag, $data)){
+require_once "image_mapping.php";
+
+$cag = $_GET['gr'] ?? 'Laptop';
+if (!$cag || !array_key_exists($cag, $data)) {
     $keys = array_keys($data);
-    header("Location: ?gr=".$keys[0]);
+    header("Location: ?gr=" . $keys[0]);
+    exit;
 }
+
 $man = $data[$cag];
-foreach($man as $mankey => $manval){
-    echo "<div class='nav_bar'> ".$mankey."</div>";
+foreach ($man as $mankey => $manval) {
+    echo "<div class='nav_bar'>" . $mankey . "</div>";
     echo "<div style='padding-bottom:15px;'>";
-    foreach($manval as $index => $prod){
-        $image_name = strtolower(str_replace(' ', '_', $prod));
-        $image_path = "images/".$image_name.".jpg";
+    
+    foreach ($manval as $product) {
+        // Kiểm tra định dạng dữ liệu (mới có ID hoặc cũ chỉ có tên)
+        if (is_array($product) && isset($product['id'])) {
+            // Định dạng mới với ID
+            $productName = $product['name'];
+            $imagePath = getImagePath($product['id']);
+        } else {
+            // Định dạng cũ chỉ có tên (fallback)
+            $productName = $product;
+            $image_name = strtolower(str_replace(' ', '_', $product));
+            $imagePath = "images/" . $image_name . ".jpg";
+        }
         
         echo "<div class='prd_item'>";
         
-        // Kiểm tra nếu file ảnh tồn tại
-        if(file_exists($image_path)) {
-            echo "<img src='".$image_path."' alt='".$prod."' class='product_image'>";
+        // Hiển thị ảnh
+        if ($imagePath && file_exists($imagePath)) {
+            echo "<img src='" . $imagePath . "' alt='" . $productName . "' class='product_image'>";
         } else {
-            // Hiển thị placeholder nếu không có ảnh
-            $icons = ['💻', '📱', '📺', '⌚', '🎧', '📷', '🖥️', '⌨️'];
-            $icon = $icons[$index % count($icons)];
-            echo "<div class='product_image'>".$icon."<br>".substr($prod, 0, 10)."</div>";
+            // Hiển thị placeholder đơn giản
+            echo "<div class='product_image' style='display:flex; align-items:center; justify-content:center; background:#f0f0f0; color:#999; font-size:12px;'>";
+            echo "Không có ảnh";
+            echo "</div>";
         }
         
-        echo "<div class='product_name'>".$prod."</div>";
+        echo "<div class='product_name'>" . $productName . "</div>";
         echo "</div>";
     }
+    
     echo "<br style='clear:both;'>";
     echo "</div>";
 }
