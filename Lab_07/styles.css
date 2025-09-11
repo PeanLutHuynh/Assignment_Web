@@ -1,27 +1,20 @@
-/* Custom styles để override Bootstrap và giữ layout hiện tại */
-
-/* Global Styles */
-* {
-    box-sizing: border-box;
-}
+/* Custom styles để override Bootstrap */
 
 body {
-    margin: 0px !important;
+    margin: 0 !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     background-color: #f5f5f5 !important;
 }
 
-/* Container - Override Bootstrap container */
 #container {
     max-width: none !important;
     width: 100% !important;
-    margin: 0px auto !important;
+    margin: 0 auto !important;
     padding: 0 !important;
     background-color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-/* Banner - Override Bootstrap text utilities */
 #banner {
     height: 150px !important;
     background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
@@ -38,19 +31,15 @@ body {
     margin: 0 !important;
 }
 
-/* Menu - Override Bootstrap navbar */
 #menu {
     height: 50px !important;
     background: linear-gradient(90deg, #004e92 0%, #000428 100%) !important;
     display: flex !important;
     align-items: center !important;
     padding: 0 20px !important;
-    border-radius: 0 !important;
-    border: none !important;
 }
 
 .menu_item {
-    display: inline-block !important;
     padding: 8px 20px !important;
     background-color: rgba(255,255,255,0.15) !important;
     color: white !important;
@@ -75,13 +64,11 @@ body {
     border-color: #004e92 !important;
 }
 
-/* Override Bootstrap row và col */
 .row {
     margin: 0 !important;
     --bs-gutter-x: 0 !important;
 }
 
-/* Left Menu - Override Bootstrap col */
 #lmenu {
     height: 475px !important;
     width: 20% !important;
@@ -91,18 +78,6 @@ body {
     overflow-y: auto !important;
 }
 
-#lmenu h3 {
-    margin-top: 0 !important;
-    color: #333 !important;
-    text-align: center !important;
-    background-color: rgba(255,255,255,0.8) !important;
-    padding: 10px !important;
-    border-radius: 10px !important;
-    margin-bottom: 15px !important;
-    font-size: 14px !important;
-}
-
-/* Content - Override Bootstrap col */
 #content {
     height: 475px !important;
     width: 80% !important;
@@ -112,7 +87,7 @@ body {
     overflow-y: auto !important;
 }
 
-#content h3 {
+#lmenu h3, #content h3 {
     margin-top: 0 !important;
     color: #333 !important;
     text-align: center !important;
@@ -123,7 +98,6 @@ body {
     font-size: 14px !important;
 }
 
-/* Footer - Override Bootstrap spacing */
 #footer {
     height: 80px !important;
     background: linear-gradient(135deg, #667db6 0%, #2e4a7d 50%, #0f2027 100%) !important;
@@ -138,7 +112,6 @@ body {
     padding: 0 !important;
 }
 
-/* Product Navigation Bar */
 .nav_bar {
     padding: 8px 15px !important;
     background: linear-gradient(90deg, #0061ff 0%, #60efff 100%) !important;
@@ -149,7 +122,6 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
 }
 
-/* Product Items */
 .prd_item {
     width: 160px !important;
     height: 200px !important;
@@ -202,32 +174,16 @@ body {
     width: 100% !important;
 }
 
-/* Responsive - Giữ nguyên responsive hiện tại */
 @media (max-width: 1020px) {
-    #container {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-    
-    #lmenu, #content {
-        width: 50% !important;
-    }
+    #container { width: 100% !important; margin: 0 !important; }
+    #lmenu, #content { width: 50% !important; }
 }
 
 @media (max-width: 768px) {
-    #lmenu, #content {
-        width: 100% !important;
-        float: none !important;
-        height: auto !important;
-    }
-    
-    .menu_item {
-        display: block !important;
-        margin: 5px 0 !important;
-        text-align: center !important;
-    }
-    
-    #banner h1 {
-        font-size: 20px !important;
-    }
+    #lmenu, #content { width: 100% !important; float: none !important; height: auto !important; }
+    .menu_item { display: block !important; margin: 5px 0 !important; text-align: center !important; }
+    #banner h1 { font-size: 20px !important; }
+    #container { margin: 10px !important; border-radius: 5px; }
+    .prd_item { width: 140px; height: 180px; margin: 3px; }
+    .product_image { width: 80px; height: 80px; }
 }
