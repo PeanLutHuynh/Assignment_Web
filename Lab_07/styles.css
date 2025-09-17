@@ -1,9 +1,15 @@
-/* Custom styles để override Bootstrap */
+html, body {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 body {
-    margin: 0 !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     background-color: #f5f5f5 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
 }
 
 #container {
@@ -13,6 +19,9 @@ body {
     padding: 0 !important;
     background-color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 #banner {
@@ -67,22 +76,22 @@ body {
 .row {
     margin: 0 !important;
     --bs-gutter-x: 0 !important;
+    flex: 1 !important; /* Cho phép content area mở rộng */
+    display: flex !important;
 }
 
 #lmenu {
-    height: 475px !important;
+    min-height: 475px !important; /* Đổi từ height thành min-height */
     width: 20% !important;
     background: linear-gradient(180deg, #43cea2 0%, #185a9d 100%) !important;
-    float: left !important;
     padding: 15px !important;
     overflow-y: auto !important;
 }
 
 #content {
-    height: 475px !important;
+    min-height: 475px !important; /* Đổi từ height thành min-height */
     width: 80% !important;
     background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 100%) !important;
-    float: left !important;
     padding: 15px !important;
     overflow-y: auto !important;
 }
@@ -107,9 +116,9 @@ body {
     color: white !important;
     font-size: 14px !important;
     text-align: center !important;
-    clear: both !important;
-    margin-top: 0 !important;
+    margin-top: auto !important;
     padding: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 .nav_bar {
@@ -180,7 +189,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    #lmenu, #content { width: 100% !important; float: none !important; height: auto !important; }
+    #lmenu, #content { 
+        width: 100% !important; 
+        float: none !important; 
+        min-height: auto !important; 
+    }
+    .row {
+        flex-direction: column !important;
+    }
     .menu_item { display: block !important; margin: 5px 0 !important; text-align: center !important; }
     #banner h1 { font-size: 20px !important; }
     #container { margin: 10px !important; border-radius: 5px; }
