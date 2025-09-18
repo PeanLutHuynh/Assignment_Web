@@ -11,83 +11,83 @@
         .user-card {
             background-color: #007bff;
             color: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
         .info-item {
             background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
         }
         
         .info-item:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             background: rgba(255, 255, 255, 0.2);
         }
         
         .info-label {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.8;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .info-value {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .hobby-badge {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin: 5px;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin: 3px;
             display: inline-block;
         }
         
         .success-icon {
-            font-size: 60px;
+            font-size: 50px;
             color: #28a745;
             animation: bounce 1s ease-in-out;
         }
         
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+            transform: translateY(0);
             }
             40% {
-                transform: translateY(-10px);
+            transform: translateY(-8px);
             }
             60% {
-                transform: translateY(-5px);
+            transform: translateY(-4px);
             }
         }
         
         .action-buttons {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         
         .btn-custom {
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 10px 25px;
+            border-radius: 20px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            margin: 5px;
+            margin: 3px;
         }
         
         .btn-back {
@@ -100,13 +100,6 @@
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
             color: white;
-        }
-        
-        .country-flag {
-            width: 24px;
-            height: 16px;
-            border-radius: 2px;
-            margin-right: 8px;
         }
     </style>
 </head>
@@ -121,22 +114,6 @@
     $age = intval($_POST['age'] ?? 0);
     $hobbies = $_POST['hobby'] ?? [];
     $country = htmlspecialchars($_POST['country'] ?? '');
-    
-    // Mapping quốc gia với emoji flag
-    $countryFlags = [
-        'Việt Nam' => '🇻🇳',
-        'Hàn Quốc' => '🇰🇷',
-        'Mỹ' => '🇺🇸',
-        'Nhật Bản' => '🇯🇵',
-        'Trung Quốc' => '🇨🇳'
-    ];
-    
-    // Mapping hobby với icon
-    $hobbyIcons = [
-        'Thể thao' => 'fas fa-running',
-        'Âm nhạc' => 'fas fa-music',
-        'Nghệ thuật' => 'fas fa-palette'
-    ];
     ?>
     
     <div class="container mt-5">
@@ -184,7 +161,7 @@
                                 </div>
                                 <div class="info-value">
                                     <span style="font-size: 24px;">
-                                        <?php echo $countryFlags[$country] ?? '🌍'; ?>
+                                        <?php echo $countryFlags[$country] ?? ''; ?>
                                     </span>
                                     <?php echo $country; ?>
                                 </div>
@@ -231,20 +208,6 @@
                         <a href="index.php" class="btn btn-back btn-custom">
                             <i class="fas fa-arrow-left"></i> Quay lại Form
                         </a>
-                    </div>
-                </div>
-                
-                <!-- Additional Info -->
-                <div class="card mt-4">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            <i class="fas fa-info-circle text-info"></i>
-                            Bước tiếp theo
-                        </h5>
-                        <p class="card-text text-muted">
-                            Thông tin đăng ký của bạn đã được lưu thành công. 
-                            Bạn có thể quay lại để đăng ký thêm người dùng khác.
-                        </p>
                     </div>
                 </div>
             </div>
